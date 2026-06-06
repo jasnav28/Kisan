@@ -1,31 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import StarBorder from './StarBorder.jsx';
 import './StarBorder.css';
-import { PRODUCTS, findProductBySlug } from './productsData.js';
+import { PRODUCTS } from './productsData.js';
 
 export default function App() {
-  const [showDetails, setShowDetails] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
-  const [product, setProduct] = useState(null);
+  const product = PRODUCTS[0];
 
   useEffect(() => {
-    const oldSlug = '/HUMICID';
-    const newSlug = '/HI%20POWER';
-    const current = window.location.pathname;
-    if (current === oldSlug || current === '/' || current === '') {
-      window.history.replaceState(null, '', newSlug);
-    }
-    const rawPath = window.location.pathname.replace(/^\//, '');
-    const found = findProductBySlug(rawPath);
-    setProduct(found);
-    const desiredSlug = `/${encodeURIComponent(found.brand)}`;
-    if (window.location.pathname !== desiredSlug) {
-      window.history.replaceState(null, '', desiredSlug);
-    }
-    document.title = `${found.brand} — Product Information`;
-  }, []);
-
-
+    document.title = `${product.brand} — Product Information`;
+  }, [product]);
 
   return (
     <div className="min-h-screen w-full relative overflow-hidden">
@@ -69,7 +53,7 @@ export default function App() {
               playsInline 
             />
           </div>
-        <div className="mt-2 text-xs sm:text-sm text-black font-semibold tracking-wide">Bio‑Stimulant Registration Details</div>
+        <div className="mt-2 text-xs sm:text-sm text-white font-semibold tracking-wide">Bio‑Stimulant Registration Details</div>
       </header>
 
       {/* Main panel */}
@@ -83,7 +67,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-xs sm:text-sm">Product Name:</div>
-                <div className="text-white text-xl sm:text-2xl font-semibold tracking-wide">{product?.displayName || product?.brand || 'HI POWER'}</div>
+                <div className="text-white text-xl sm:text-2xl font-semibold tracking-wide">{product.displayName || product.brand}</div>
               </div>
             </div>
           </StarBorder>
@@ -98,7 +82,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Gazette Notification:</div>
-                <div className="text-white text-base sm:text-lg">{product?.gazette || 'SO:3922(E), Dated: 12th September ,2024'}</div>
+                <div className="text-white text-base sm:text-lg">{product.gazette}</div>
               </div>
             </div>
           </StarBorder>
@@ -113,14 +97,14 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Tittle of Bio Stimulant:</div>
-                <div className="text-white text-base sm:text-lg">{product?.specification || ''}</div>
+                <div className="text-white text-base sm:text-lg">{product.specification}</div>
               </div>
             </div>
           </StarBorder>
         </section>
 
         {/* Category of Fertilizers FOURTH */}
-        {product?.category && (
+        {product.category && (
           <section className="mt-6">
             <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
               <div className="flex items-start">
@@ -138,9 +122,6 @@ export default function App() {
 
         {/* Info grid with StarBorder */}
         <section className="mt-8 grid grid-cols-1 gap-4">
-          {/* Gazette moved to top */}
-
-
           <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
             <div className="flex items-start">
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
@@ -148,9 +129,9 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Composition</div>
-                {(product?.composition || []).length ? (
+                {(product.composition || []).length ? (
                   <ul className="mt-1 text-sm sm:text-base text-white list-none pl-0 space-y-1">
-                    {(product?.composition || []).map((line, idx) => (
+                    {(product.composition || []).map((line, idx) => (
                       <li key={idx}>{line}</li>
                     ))}
                   </ul>
@@ -168,7 +149,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Crops:</div>
-                <div className="text-base sm:text-lg">{(product?.crops || []).join(', ')}</div>
+                <div className="text-base sm:text-lg">{(product.crops || []).join(', ')}</div>
               </div>
             </div>
           </StarBorder>
@@ -180,7 +161,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Dosage:</div>
-                <div className="text-base sm:text-lg">{(product?.dosage || []).join(' | ')}</div>
+                <div className="text-base sm:text-lg">{(product.dosage || []).join(' | ')}</div>
               </div>
             </div>
           </StarBorder>
@@ -189,10 +170,26 @@ export default function App() {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
                 <span className="text-lg">🏭</span>
               </div>
-              <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Manufactured and Marketed By:</div>
-                <div className="text-white/90 text-sm sm:text-base font-semibold">SAKASH AGRO TECH PVT. LTD.</div>
-                <div className="text-white/90 text-sm sm:text-base">Site No 25,Survey No. 121,Yelachaguppe Village, Gridpalya, Gokula Road, Tavarekere Hobli, Bangalore South - 562130</div>
+              <div className="flex-1 space-y-4">
+                <div>
+                  <div className="text-[#d9c98f] text-sm">Manufactured By:</div>
+                  <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Kisan Plantcare Private Limited,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Sy.No.682 To 717,plot No.46,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Tif Msme Green Industrial Park,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Ip Dandu,Malkapur(V),Choutuppal(M),</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Yadadri Bhuvanagiri District-508252</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9849566678</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: kisanplantcare27@gmail.com</div>
+                </div>
+                <div className="pt-4 border-t border-white/20">
+                  <div className="text-[#d9c98f] text-sm">Marketed By:</div>
+                  <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Kisan Plantcare Private Limited,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Flat No.1-1,Shop No.2,APMC Yard,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Amargol,2nd main Road,Hubballi,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Dharwad District,Karnataka-580025</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9849566678</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: kisanplantcare27@gmail.com</div>
+                </div>
               </div>
             </div>
           </StarBorder>
@@ -203,7 +200,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Customer Care</div>
-                <div className="text-white/90 text-sm sm:text-base">+91 80887 73868</div>
+                <div className="text-white/90 text-sm sm:text-base">+91 9849566678</div>
               </div>
             </div>
           </StarBorder>
