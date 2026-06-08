@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import StarBorder from './StarBorder.jsx';
 import './StarBorder.css';
-import { PRODUCTS } from './productsData.js';
+import { PRODUCTS, findProductBySlug } from './productsData.js';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const product = PRODUCTS[0];
+  
+  // Simple routing: get product from URL path
+  const pathname = window.location.pathname.split('/').pop() || '';
+  const product = findProductBySlug(pathname);
 
   useEffect(() => {
-    document.title = `${product.brand} — Product Information`;
+    document.title = product.brand;
   }, [product]);
 
   return (
@@ -74,19 +77,21 @@ export default function App() {
         </section>
 
         {/* Gazette Notification SECOND */}
-        <section className="mt-6">
-          <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
-            <div className="flex items-start">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
-                <span className="text-lg">📰</span>
+        {product.gazette && (
+          <section className="mt-6">
+            <StarBorder as="div" className="w-full" color="cyan" speed="5s" thickness={2}>
+              <div className="flex items-start">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
+                  <span className="text-lg">📰</span>
+                </div>
+                <div className="flex-1">
+                  <div className="text-[#d9c98f] text-sm">Gazette Notification:</div>
+                  <div className="text-white text-base sm:text-lg">{product.gazette}</div>
+                </div>
               </div>
-              <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Gazette Notification:</div>
-                <div className="text-white text-base sm:text-lg">{product.gazette}</div>
-              </div>
-            </div>
-          </StarBorder>
-        </section>
+            </StarBorder>
+          </section>
+        )}
 
         {/* Title of Bio Stimulant THIRD */}
         <section className="mt-6">
@@ -96,7 +101,7 @@ export default function App() {
                 <span className="text-lg">⚗️</span>
               </div>
               <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Tittle of Bio Stimulant:</div>
+                <div className="text-[#d9c98f] text-sm">Title of Bio Stimulant:</div>
                 <div className="text-white text-base sm:text-lg">{product.specification}</div>
               </div>
             </div>
