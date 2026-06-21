@@ -184,14 +184,26 @@ export default function App() {
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#e8d8a6]/25 text-[#e8d8a6] mr-3 shadow-inner">
                 <span className="text-lg">🏭</span>
               </div>
-              <div className="flex-1">
-                <div className="text-[#d9c98f] text-sm">Manufactured And Marketed By:</div>
-                <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Kisan Plantcare Private Limited,</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Sy.No.682 To 717, plot No.46,</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Tif Msme Green Industrial Park,</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Ip Dandu, Malkapur(V), Choutuppal(M),</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-0.5">Yadadri Bhuvanagiri District-508252</div>
-                <div className="text-white/90 text-xs sm:text-sm mt-1">E-Mail: kisanplantcare27@gmail.com</div>
+              <div className="flex-1 space-y-4">
+                <div>
+                  <div className="text-[#d9c98f] text-sm">Manufactured By:</div>
+                  <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Kisan Plantcare Private Limited,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Sy.No.682 To 717, plot No.46,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Tif Msme Green Industrial Park,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Ip Dandu, Malkapur(V), Choutuppal(M),</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Yadadri Bhuvanagiri District-508252</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9849566678</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: kisanplantcare27@gmail.com</div>
+                </div>
+                <div className="pt-4 border-t border-white/20">
+                  <div className="text-[#d9c98f] text-sm">Marketed By:</div>
+                  <div className="text-white/90 text-sm sm:text-base font-semibold mt-1">Kisan Plantcare Private Limited,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Flat No.1-1, Shop No.2, APMC Yard,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Amargol, 2nd main Road, Hubballi,</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">Dharwad District, Karnataka-580025</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9849566678</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: kisanplantcare27@gmail.com</div>
+                </div>
               </div>
             </div>
           </StarBorder>
