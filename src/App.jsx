@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import StarBorder from './StarBorder.jsx';
 import './StarBorder.css';
 import { PRODUCTS, findProductBySlug } from './productsData.js';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
+  const videoRef = useRef(null);
   
   // Simple routing: get product from URL path
   const pathname = window.location.pathname.split('/').pop() || '';
@@ -14,16 +15,24 @@ export default function App() {
     document.title = product.brand;
   }, [product]);
 
+  useEffect(() => {
+    if (showIntro && videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay with sound was prevented by browser:", error);
+      });
+    }
+  }, [showIntro]);
+
   return (
     <div className="min-h-screen w-full relative overflow-hidden">
       {/* Intro overlay */}
       {showIntro && (
         <div className="fixed inset-0 z-[200] bg-black flex items-center justify-center">
           <video
+            ref={videoRef}
             className="max-h-screen w-auto"
             src="/intro take 4.mp4"
             autoPlay
-            muted
             playsInline
             preload="auto"
             poster="/new.jpeg"
