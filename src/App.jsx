@@ -192,7 +192,7 @@ export default function App() {
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">Tif Msme Green Industrial Park,</div>
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">Ip Dandu, Malkapur(V), Choutuppal(M),</div>
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">Yadadri Bhuvanagiri District-508252</div>
-                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9849566678</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 7207892229</div>
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: kisanplantcare27@gmail.com</div>
                 </div>
                 <div className="pt-4 border-t border-white/20">
@@ -201,7 +201,7 @@ export default function App() {
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">Flat No.1-1, Shop No.2, APMC Yard,</div>
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">Amargol, 2nd main Road, Hubballi,</div>
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">Dharwad District, Karnataka-580025</div>
-                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 9849566678</div>
+                  <div className="text-white/90 text-xs sm:text-sm mt-1">Phone: 7207892229</div>
                   <div className="text-white/90 text-xs sm:text-sm mt-0.5">E-Mail: kisanplantcare27@gmail.com</div>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function App() {
               </div>
               <div className="flex-1">
                 <div className="text-[#d9c98f] text-sm">Customer Care</div>
-                <div className="text-white/90 text-sm sm:text-base">+91 9849566678</div>
+                <div className="text-white/90 text-sm sm:text-base">+91 7207892229</div>
               </div>
             </div>
           </StarBorder>
