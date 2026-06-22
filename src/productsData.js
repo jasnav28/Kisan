@@ -370,14 +370,28 @@ export const PRODUCTS = [
     brand: 'KISAN - REMOVE', 
     specification: 'Mixture of Humic acid and Seaweed extract (Granules)', 
     category: 'Mixed Formulations',
-    crops: ['Rice'], 
-    dosage: ['Two soil applications at 10 kg/ha'], 
-    gazette: '16th February, 2026 S.O. 876(E)', 
+    crops: ['Tomato'], 
+    dosage: ['Two soil applications at 25 kg/ha'], 
+    gazette: '26th May, 2025 S.O. 2346E)', 
     composition: [
-      '(i) Potassium humate (Source: Plant derived) per cent. by weight, minimum 1.66', 
-      '(ii) Seaweed (Ascophyllum nodosum) extract per cent. by weight, minimum 2.00', 
-      '(iii) Bentonite per cent. by weight, maximum  QS', 
-      '(iv) Total (per cent.) 100'
+      '(i)  Kappaphycus alvarezii and Sargassum swartzii in ratio of 1:1, extract per cent. by weight, minimum 3.3', 
+      '(ii)  Humic acid powder as potassium humate (Source: Leonardite) per cent. by weight, minimum 1.0', 
+      '(iii) Dolomite per cent. by weight, maximum 95.7', 
+      '(iv) Total 100'
+    ]
+  },
+  { 
+    brand: 'KISAN - SPICE SPECIAL', 
+    specification: 'Sargassum tenerrimum 10% (Liquid)', 
+    category: 'Seaweed Extract',
+    crops: ['Tomato', 'Rice'], 
+    dosage: ['Rice: Two foliar applications at 1000 ml/ha.', 'Tomato: Two foliar applications at 625 ml/ha.'], 
+    gazette: '16th February, 2026 S.O. 876(E).', 
+    composition: [
+      '(i) Seaweed (Sargassum tenerrimum) extract per cent. by weight, minimum 10', 
+      '(ii) PEG400 as adjuvant per cent. by weight, maximum 0.1', 
+      '(iii) Water per cent. by weight, maximum 89.9', 
+      '(iv)  Total (per cent.) 100'
     ]
   }
 ];
@@ -432,9 +446,10 @@ export const SLUG_TO_BRAND = {
   'KISAN - LAAVA': 'KISAN - LAAVA',
   'KISAN-LAAVA': 'KISAN - LAAVA',
   'KISAN - THUNDER': 'KISAN - THUNDER',
-  'KISAN-THUNDER': 'KISAN - THUNDER',
   'KISAN - REMOVE': 'KISAN - REMOVE',
   'KISAN-REMOVE': 'KISAN - REMOVE',
+  'KISAN - SPICE SPECIAL': 'KISAN - SPICE SPECIAL',
+  'KISAN-SPICE-SPECIAL': 'KISAN - SPICE SPECIAL',
 };
 
 export function findProductBySlug(slug) {
