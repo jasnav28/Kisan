@@ -198,7 +198,7 @@ export const PRODUCTS = [
     category: 'Protein Hydrolysates and Amino Acids',
     crops: ['Tomato'], 
     dosage: ['Two soil applications at 40 kg/ha'], 
-    gazette: '', 
+    gazette: '26th May, 2025 S.O. 2346E)', 
     composition: [
       '(i)  Protein hydrolysate derived from defatted soybean seed flour by enzymatic (Papain) hydrolysis per cent. by weight, minimum 1.5', 
       '(ii)  Bentonite per cent. by weight, maximum 98.5', 
@@ -211,7 +211,7 @@ export const PRODUCTS = [
     category: 'Protein Hydrolysates and Amino Acids',
     crops: ['Chilli'], 
     dosage: ['Two foliar applications at 750 ml/ha'], 
-    gazette: '', 
+    gazette: '26th May, 2025 S.O. 2346E).', 
     composition: [
       '(i)  Amino acids derived from Maize seeds / grains (starch removed gluten through acid hydrolysis) percent. weight by volume, minimum 10', 
       '(ii)  Polysorbate 80 per cent. weight by volume, minimum 2', 
@@ -238,7 +238,7 @@ export const PRODUCTS = [
     category: 'Protein Hydrolysates and Amino Acids',
     crops: ['Grape', 'Chilli'], 
     dosage: ['Grape : Four foliar sprays at 1.25 l/ha to 2.0 l/ha depending on canopy size', 'Chilli : Three foliar applications at 3.75 l/ha'], 
-    gazette: '', 
+    gazette: '26th May, 2025 S.O. 2346E).', 
     composition: [
       '(i)  Amino acids derived from enzymatic (Alkaline Protease) hydrolysis of bacterial biomass (Methylococcus capsulatus) per cent. by weight, minimum 2', 
       '(ii)  Water per cent. by weight QS', 
@@ -251,7 +251,7 @@ export const PRODUCTS = [
     category: 'Protein Hydrolysates and Amino Acids',
     crops: ['Okra'], 
     dosage: ['Three foliar applications at 900 g/ha'], 
-    gazette: '', 
+    gazette: '13th August, 2025 S.O. 3741(E).', 
     composition: [
       '(i) Protein hydrolysate derived from soybean through acid hydrolysis per cent. by weight, minimum 20', 
       '(ii) Diethylene Glycol per cent. by weight, minimum 8', 
@@ -384,8 +384,8 @@ export const PRODUCTS = [
     brand: 'KISAN - SPICE SPECIAL', 
     specification: 'Sargassum tenerrimum 10% (Liquid)', 
     category: 'Seaweed Extract',
-    crops: ['Tomato', 'Rice'], 
-    dosage: ['Rice: Two foliar applications at 1000 ml/ha.', 'Tomato: Two foliar applications at 625 ml/ha.'], 
+    crops: ['Paddy', 'Tomato'], 
+    dosage: ['Paddy: One foliar applications at 625 ml/ha.', 'Tomato: Two foliar applications at 625 ml/ha.'], 
     gazette: '16th February, 2026 S.O. 876(E).', 
     composition: [
       '(i) Seaweed (Sargassum tenerrimum) extract per cent. by weight, minimum 10', 
