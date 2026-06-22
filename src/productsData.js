@@ -384,14 +384,16 @@ export const PRODUCTS = [
     brand: 'KISAN - SPICE SPECIAL', 
     specification: 'Sargassum tenerrimum 10% (Liquid)', 
     category: 'Seaweed Extract',
-    crops: ['Paddy', 'Tomato'], 
-    dosage: ['Paddy: One foliar applications at 625 ml/ha.', 'Tomato: Two foliar applications at 625 ml/ha.'], 
-    gazette: '16th February, 2026 S.O. 876(E).', 
+    crops: ['Rice', 'Tomato'], 
+    dosage: ['Rice: Two foliar applications at 1000 ml/ha.', 'Tomato: Two foliar applications at 625 ml/ha.'], 
+    gazette: '13th August, 2025 S.O. 3741(E).', 
     composition: [
-      '(i) Seaweed (Sargassum tenerrimum) extract per cent. by weight, minimum 10', 
-      '(ii) PEG400 as adjuvant per cent. by weight, maximum 0.1', 
-      '(iii) Water per cent. by weight, maximum 89.9', 
-      '(iv)  Total (per cent.) 100'
+      '(i) Seaweed extract (Sargassum tenerrimum ) per cent. by weight, minimum 10', 
+      '(ii) Carbohydrates per cent. by weight, minimum 8', 
+      '(iii) Octylphenol ethoxylate as adjuvant per cent. by weight, minimum 3.1', 
+      '(iv) Sodium benzoate per cent. by weight, minimum 1.0', 
+      '(v) Water per cent. by weight QS', 
+      '(vi) Total (per cent.) 100'
     ]
   }
 ];
